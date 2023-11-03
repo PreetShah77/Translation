@@ -1,0 +1,40 @@
+/* TextTranslate.css */
+.text-translate-container {
+  background-image: linear-gradient(to right, #f0f0f0, #ffffff);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  min-height: 50vh; /* Increase the height for better visibility */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.text-input {
+  width: 80%;
+  max-width: 1000px; /* Limit the width to maintain readability */
+  height: 100px; /* Increase the height for better readability */
+  padding: 10px;
+  margin: 10px 0; /* Add margin between text boxes */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+/* Create space between the buttons */
+.translate-button {
+  background-color: #0074d9; /* Background color for the button */
+  color: #fff; /* Text color for the button */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 5px 0; /* Add vertical margin between buttons */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.translate-button:hover {
+  background-color: #0091ea; /* Background color on hover */
+  transform: scale(1.1);
+}

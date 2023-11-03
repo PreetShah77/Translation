@@ -1,0 +1,40 @@
+/* Home.css */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+  
+  .image-container {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .message-container {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .message-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+  }
+  
+  .message-container p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #555;
+  }
+  

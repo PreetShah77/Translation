@@ -1,0 +1,57 @@
+/* AudioTranslate.css */
+.audio-translate-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+
+.file-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.file-input label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.file-input input[type="file"] {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+}
+
+.output-audio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+output-audio audio {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 10px;
+}
+
+.translate-button {
+  background-color: #0074d9;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.translate-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
