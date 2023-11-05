@@ -6,17 +6,17 @@
   flex-direction: column;
   align-items: center; /* Center horizontally */
   justify-content: center; /* Center vertically */
-  min-height: 50vh; /* Increase the height for better visibility */
+  min-height: 10vh; /* Increase the height for better visibility */
   padding: 20px;
   border-radius: 10px;
 }
 
 .text-input {
-  width: 80%;
+  width: 2000vw;
   max-width: 1000px; /* Limit the width to maintain readability */
   height: 100px; /* Increase the height for better readability */
   padding: 10px;
-  margin: 10px 0; /* Add margin between text boxes */
+  /* margin: 10px 0; Add margin between text boxes */
   border: 1px solid #ccc;
   border-radius: 10px;
 }
