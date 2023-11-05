@@ -1,44 +1,42 @@
-// AudioTranslate.js
 import React, { useState } from 'react';
 import './AudioTranslate.css';
 
 function AudioTranslate() {
   const [audioFile, setAudioFile] = useState(null);
   const [translatedText, setTranslatedText] = useState('');
-  const [translatedAudio, setTranslatedAudio] = useState('');
+  const [translatedAudio, setTranslatedAudio] = useState(null);
 
   const handleAudioChange = (event) => {
     const file = event.target.files[0];
     setAudioFile(file);
   };
 
-  const handleTranslate = () => {
+  const handleTranslate = async () => {
     if (!audioFile) {
       alert('Please upload an audio file first.');
       return;
     }
 
-    // Perform speech-to-text on the audio (you'll need to implement this part)
+    // Send the audio file to the server
+    const formData = new FormData();
+    formData.append('audio', audioFile);
 
-    // Assuming you have the result as text, send it for translation
-    const textToTranslate = 'Your Speech to Text Result'; // Replace with actual result
-    const translationUrl = `https://langapi.vercel.app/home?from=en&to=gu&text=${textToTranslate}`;
-
-    fetch(translationUrl)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.status && data.translated) {
-          setTranslatedText(data.translated);
-          // Perform text-to-speech for translation (you'll need to implement this part)
-        } else {
-          // Handle translation error
-          console.error('Translation failed.');
-        }
-      })
-      .catch((error) => {
-        // Handle fetch error
-        console.error(error);
+    try {
+      const response = await fetch('http://localhost:5000/upload', {
+        method: 'POST',
+        body: formData,
       });
+
+      if (response.ok) {
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        setTranslatedAudio(url);
+      } else {
+        console.error('Error sending audio to server', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error sending audio to server:', error);
+    }
   };
 
   return (
@@ -52,7 +50,7 @@ function AudioTranslate() {
         Translated Text:
         <p>{translatedText}</p>
         <audio controls>
-          {/* Add translated audio source here */}
+          {translatedAudio && <source src={translatedAudio} type="audio/mpeg" />}
         </audio>
       </div>
       <div className="translate-buttons">
