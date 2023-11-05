@@ -1,14 +1,16 @@
 // Home.js
 import React from 'react';
+import './Home.css';
+import translationImage from './images/translation-image.jpg'; // Make sure to adjust the path
 
 function Home() {
   return (
     <div className="home-container">
       <div className="image-container">
-        <img src='translator\src\images\translation-image.jpg' alt="Translation Image" />
+        <img src={translationImage} alt="Translation Image" width={600} height={200}  />
       </div>
       <div className="message-container">
-        <h2>Importance of Translation</h2>
+        
         <p>
           Translation plays a crucial role in bridging language barriers and promoting
           understanding between people from diverse backgrounds. It allows us to
@@ -16,7 +18,7 @@ function Home() {
         </p>
         <p>
           Our translation tools are here to assist you in making the world a more
-          connected and inclusive place. Start translating today!
+          connected and inclusive place. <b>Start translating today!</b>
         </p>
       </div>
     </div>
