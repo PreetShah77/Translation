@@ -33,16 +33,16 @@ function TextTranslate() {
     <div className="text-translate-container">
       <h2>Text Translation</h2>
       <label>
-        English:
+      <p>English:</p>
         <textarea
           className="text-input"
           value={englishText}
           onChange={(e) => setEnglishText(e.target.value)}
         />
-      </label>
+        </label>
       <br />
       <label>
-        Gujarati:
+        <p>Gujarati:</p>
         <textarea
           className="text-input"
           value={gujaratiText}
